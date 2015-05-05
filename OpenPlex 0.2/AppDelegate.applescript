@@ -451,9 +451,11 @@ script AppDelegate
                         end if
                     end try
                     if (exists file "Applications:plexconnect_BACKUP:myplex.auto" of the startup disk) then
+                        try
                         do shell script "atvsettingsautobash.bash"
                         display notification "Myplex loaded..." with title "OpenPlex Status"
                         delay 0
+                        end try
                     end if
                     try
                         set fileAsPOSIX to (POSIX path of "/Applications/PlexConnect/PlexConnect.log")
@@ -682,9 +684,11 @@ script AppDelegate
                         end if
                     end try
                     if (exists file "Applications:plexconnect_BACKUP:myplex.auto" of the startup disk) then
+                        try
                         do shell script "atvsettingsautobash.bash"
                         display notification "Myplex loaded..." with title "OpenPlex Status"
                         delay 0
+                        end try
                     end if
                     try
                         set fileAsPOSIX to (POSIX path of "/Applications/PlexConnect/PlexConnect.log")
@@ -913,9 +917,11 @@ script AppDelegate
                         end if
                     end try
                     if (exists file "Applications:plexconnect_BACKUP:myplex.auto" of the startup disk) then
+                        try
                         do shell script "atvsettingsautobash.bash"
                         display notification "Myplex loaded..." with title "OpenPlex Status"
                         delay 0
+                        end try
                     end if
                     try
                         set fileAsPOSIX to (POSIX path of "/Applications/PlexConnect/PlexConnect.log")
@@ -1144,9 +1150,11 @@ script AppDelegate
                         end if
                     end try
                     if (exists file "Applications:plexconnect_BACKUP:myplex.auto" of the startup disk) then
+                        try
                         do shell script "atvsettingsautobash.bash"
                         display notification "Myplex loaded..." with title "OpenPlex Status"
                         delay 0
+                        end try
                     end if
                     try
                         set fileAsPOSIX to (POSIX path of "/Applications/PlexConnect/PlexConnect.log")
@@ -1375,9 +1383,11 @@ script AppDelegate
                         end if
                     end try
                     if (exists file "Applications:plexconnect_BACKUP:myplex.auto" of the startup disk) then
+                        try
                         do shell script "atvsettingsautobash.bash"
                         display notification "Myplex loaded..." with title "OpenPlex Status"
                         delay 0
+                        end try
                     end if
                     try
                         set fileAsPOSIX to (POSIX path of "/Applications/PlexConnect/PlexConnect.log")
@@ -1606,9 +1616,11 @@ script AppDelegate
                         end if
                     end try
                     if (exists file "Applications:plexconnect_BACKUP:myplex.auto" of the startup disk) then
+                        try
                         do shell script "atvsettingsautobash.bash"
                         display notification "Myplex loaded..." with title "OpenPlex Status"
                         delay 0
+                        end try
                     end if
                     try
                         set fileAsPOSIX to (POSIX path of "/Applications/PlexConnect/PlexConnect.log")
@@ -1962,7 +1974,13 @@ script AppDelegate
         set animated to false
     end buttonhandlerwsj_
     
-    --Hijack Tab
+    --Plex Icon Tab
+    
+    on buttonhandlericontut_(sender)
+        set theURL to "https://www.youtube.com/watch?v=Sq9I16TnjUc"
+        tell application "Safari" to make new document with properties {URL:theURL}
+        do shell script "show Safari"
+    end buttonhandlericontut_
     
     on buttonhandlerios7greyplexicon_(sender)
         do shell script "stopbash.bash"
